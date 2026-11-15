@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>PLANIT AI | Task Board</title>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+    <main>
+        <section class="m-8 md:m-18 pl-4 pr-4 md:pl-24 md:pr-24">
+
+            <div>
+                <p
+                    class="ml-4 pl-4 mt-8 text-xl font-bold"
+                    id="projet">
+                </p>
+
+                <p
+                    class="ml-4 p-4 text-xl"
+                    id="hours">
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-6 rounded-2xl">
+
+                <article class="rounded-xl shadow-sm overflow-hidden bg-white">
+
+                    <div class="flex justify-between items-center bg-[#187C81] p-3">
+                        <h3 class="font-bold text-gray-800">To Do</h3>
+
+                        <span class="text-sm text-gray-600" id="todo-count">0</span>
+                    </div>
+
+                    <div id="to-do" class="p-3 space-y-3 min-h-40">
+                    </div>
+
+                </article>
+
+                <article class="rounded-xl shadow-sm overflow-hidden bg-white">
+
+                    <div class="flex justify-between items-center bg-[#187C81] p-3">
+                        <h3 class="font-bold text-gray-800">In Progress</h3>
+
+                        <span class="text-sm text-gray-600" id="progress-count">0</span>
+                    </div>
+
+                    <div id="in-progress" class="p-3 space-y-3 min-h-40">
+                    </div>
+
+                </article>
+
+                <article class="rounded-xl shadow-sm overflow-hidden bg-white">
+
+                    <div class="flex justify-between items-center bg-[#187C81] p-3">
+                        <h3 class="font-bold text-gray-800">Done</h3>
+
+                        <span class="text-sm text-gray-600" id="done-count">0</span>
+                    </div>
+
+                    <div id="done" class="p-3 space-y-3 min-h-40">
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+    </main>
+
+    <script type="module" src="./dashboard.js"></script>
+</body>
+</html>
