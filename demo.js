@@ -9,6 +9,7 @@ fetch("./sample-plan.json")
     .then(data => {
         console.log("Data received");
         console.log(data);
+        localStorage.setItem("currentProject", JSON.stringify(data));
         console.log(data.projectName);
         console.log(data.tasks.length);
     })
