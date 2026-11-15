@@ -12,7 +12,6 @@ const todoCount = document.querySelector("#todo-count");
 const progressCount = document.querySelector("#progress-count");
 const doneCount = document.querySelector("#done-count");
 
-// Display project information
 projectName.textContent = data.projectName || "Untitled Project";
 
 projectHours.textContent = `${data.totalEstimatedHours ?? 0} hours`;
@@ -29,8 +28,7 @@ doneContainer.innerHTML = "";
 tasks.forEach((item) => {
     const p = document.createElement("p");
 
-    p.textContent = `${item.title} - ${item.priority}`;
-
+   p.textContent = `Task: ${item.title}  \nPriority: ${item.priority}`;
     p.className = "bg-gray-100 p-3 rounded-lg shadow-sm";
 
     if (item.status === "To Do") {
