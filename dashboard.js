@@ -28,7 +28,7 @@ doneContainer.innerHTML = "";
 tasks.forEach((item) => {
     const p = document.createElement("p");
 
-   p.textContent = `Task: ${item.title}  \nPriority: ${item.priority}`;
+   p.textContent = `${item.title}  - ${item.priority}`;
     p.className = "bg-gray-100 p-3 rounded-lg shadow-sm";
 
     if (item.status === "To Do") {
