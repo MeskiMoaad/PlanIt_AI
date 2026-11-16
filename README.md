@@ -3,6 +3,9 @@
 ### Smart Project Planning & Development
 
 ---
+## 📅 Project Planing 
+
+https://meskimoaad37.atlassian.net/jira/software/projects/PLANIT/boards/2?filter=&groupBy=none
 
 ## 📌 Project Overview
 
