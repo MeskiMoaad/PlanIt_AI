@@ -47,7 +47,7 @@ tasks.forEach((item) => {
         }
         p.addEventListener("dragstart", drag);
     });
-//drag && drop functionnalities
+    //drag && drop functionnalities ):
     function allowDrop(ev) {
         ev.preventDefault();
     }
