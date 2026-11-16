@@ -38,7 +38,7 @@ tasks.forEach((item) => {
     else if (item.status === "Done") {
         doneContainer.appendChild(p);
         }
-        
+
         p.draggable = true;
         p.id = item.id;
 
@@ -47,11 +47,10 @@ tasks.forEach((item) => {
         }
         p.addEventListener("dragstart", drag);
     });
-    
+//drag && drop functionnalities
     function allowDrop(ev) {
         ev.preventDefault();
     }
-    
     function drop(ev) {
         ev.preventDefault();
         let data = ev.dataTransfer.getData("text");
