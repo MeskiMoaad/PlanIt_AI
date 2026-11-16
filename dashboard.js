@@ -16,7 +16,6 @@ projectName.textContent = data.projectName || "Untitled Project";
 
 projectHours.textContent = `${data.totalEstimatedHours ?? 0} hours`;
 
-// Get tasks
 const tasks = data.tasks || [];
 
 // Clear containers
