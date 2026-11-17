@@ -26,7 +26,7 @@ doneContainer.innerHTML = "";
 tasks.forEach((item) => {
     const p = document.createElement("p");
 
-   p.textContent = `\nTask: ${item.title}  - \nPriority: ${item.priority}`;
+   p.textContent = `\nTask: ${item.title}  - \ ${item.priority}`;
     p.className = "bg-gray-100 p-3 rounded-lg shadow-sm";
 
     if (item.status === "To Do") {
@@ -51,11 +51,38 @@ tasks.forEach((item) => {
     function allowDrop(ev) {
         ev.preventDefault();
     }
-    function drop(ev) {
-        ev.preventDefault();
-        let data = ev.dataTransfer.getData("text");
-        ev.target.appendChild(document.getElementById(data));
+
+     function drop(ev) {
+    ev.preventDefault();
+
+    const taskId = ev.dataTransfer.getData("text");
+    const task = document.getElementById(taskId);
+
+    // Move task to the new column
+    ev.currentTarget.appendChild(task);
+
+    // Update task status
+    const newStatus = ev.currentTarget.id;
+
+    const taskData = data.tasks.find(item => item.id === taskId);
+
+    if (taskData) {
+        if (newStatus === "to-do") {
+            taskData.status = "To Do";
+        } 
+        else if (newStatus === "in-progress") {
+            taskData.status = "In Progress";
+        } 
+        else if (newStatus === "done") {
+            taskData.status = "Done";
+        }
     }
+
+    localStorage.setItem("currentProject", JSON.stringify(data));
+
+
+}
+
     todoContainer.addEventListener("dragover", allowDrop)
     progressContainer.addEventListener("dragover", allowDrop)
     doneContainer.addEventListener("dragover", allowDrop)
@@ -65,7 +92,6 @@ tasks.forEach((item) => {
     doneContainer.addEventListener("drop", drop)
 
 
-// Update counters
 todoCount.textContent = todoContainer.children.length;
 progressCount.textContent = progressContainer.children.length;
 doneCount.textContent = doneContainer.children.length;
